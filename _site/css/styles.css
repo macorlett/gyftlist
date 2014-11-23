@@ -26,7 +26,7 @@ a {
   background-position: 0px 2.025rem;
   transition: color .25s ease-in-out, background-image .25s ease-in-out; }
   a:hover {
-    color: #00ffa0; }
+    color: #00FFA0; }
 
 .margin-top-navigation {
   margin-top: 7rem; }
@@ -38,7 +38,7 @@ a {
   left: 0;
   right: 0;
   height: 7rem;
-  background: #00ffa0;
+  background: #00FFA0;
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
   text-align: center;
   line-height: 7rem;
