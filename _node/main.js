@@ -34,7 +34,7 @@ function processPost(req,res,callback){
 var server=http.createServer(function(req,res){
   if(req.method=='POST'){
     processPost(req,res,function(){
-      console.log(JSON.parse(req.post));
+      console.log(req.post);
       //use req.post here
 
       res.writeHead(200,'OK',{'Content-Type':'text/plain',"Access-Control-Allow-Origin":"*"});
@@ -46,4 +46,4 @@ var server=http.createServer(function(req,res){
   }
 });
 
-server.listen('8000','127.0.0.1');
+server.listen('8000');
