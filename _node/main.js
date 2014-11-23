@@ -46,4 +46,4 @@ var server=http.createServer(function(req,res){
   }
 });
 
-server.listen('8000','gyftlist.michaelcorlett.me');
+server.listen('8000','127.0.0.1');
