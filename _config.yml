@@ -1,0 +1,13 @@
+name: "gyftlist"
+decription: "none"
+
+# url: "http://olive2oil.co.nz"
+url: "http://127.0.0.1:4000"
+port: 4000
+
+#paginate: 10
+
+markdown: rdiscount
+permalink: pretty
+sass:
+style: :compressed

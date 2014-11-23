@@ -1,0 +1,19 @@
+body{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  color: #222;
+  @include font-size($type-standard);
+  background: #f4f4f4
+}
+a{
+  color: #111;
+  @include underline($type-standard,#111);
+  transition: color .25s ease-in-out,
+              background-image .25s ease-in-out;
+  &:hover{
+    color: $green;
+  }
+}
+.margin-top-navigation{
+  margin-top: 7rem;
+}
