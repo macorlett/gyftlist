@@ -41,7 +41,7 @@ function urlToLink(text){
 function postData(data){
   $.ajax({
     type:'POST',
-    url:'gyftlist.michaelcorlett.me/api',
+    url:'/api',
     contentType:'application/json; charset=utf-8',
     dataType:'json',
     data:data,
