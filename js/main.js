@@ -33,6 +33,17 @@ function storeUpdated(key,time){
   }
 }
 
+function getLocal(key){
+  if(localStorage){
+    if(storeCheck(key)){
+      this.data=JSON.parse(localStorage.getItem(key));
+      return this.data;
+    }else{
+      return false;
+    }
+  }
+}
+
 function urlToLink(text){
   var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/i;
   return text.replace(exp,'<a href="$1" target="_blank">$1</a>');

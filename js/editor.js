@@ -13,6 +13,9 @@ $(document).keydown(function(e){
     console.log('enter pressed');
     if($(".creator--input").is(':focus')){
       createListItem($(".creator--input").val());
+
+      // add current list to local storage
+
       $(".creator--input").val('');
     }
     return false;

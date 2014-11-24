@@ -37,13 +37,12 @@ var server=http.createServer(function(req,res){
       console.log(req.post);
       //use req.post here
 
-      res.writeHead(200,'OK',{'Content-Type':'text/plain',"Access-Control-Allow-Origin":"*"});
+      res.writeHead(200,'OK',{'Content-Type':'text/plain'});
       res.end();
     });
   }else{
     res.writeHead(200,'OK',{'Content-Type':'text/plain'});
     res.end();
-    // hi
   }
 });
 
