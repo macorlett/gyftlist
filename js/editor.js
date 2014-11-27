@@ -9,26 +9,37 @@ $(document).ready(function(){
 });
 
 $(document).keydown(function(e){
-  if(e.which==13){
-    console.log('enter pressed');
-    if($(".creator--input").is(':focus') && $(".creator--input").val()!==''){
-      createListItem($(".creator--input").val());
+  switch(e.which){
+    case 13: //enter pressed
+      //console.log('enter pressed');
+      if($(".creator--input").is(':focus')){
+        if($(".creator--input").val()!==''){
+          createListItem($(".creator--input").val());
 
-      // add current list to local storage
+          // add current list to local storage
 
-      $(".creator--input").val('');
-    }
-    return false;
-  }else if(e.which==8){
-    console.log('backspace pressed');
-    if($(".creator--input").is(':focus') && $(".creator--input").val()==''){
-      if($(".creator--input").prev('.creator--list--item')){
-        this.text=$(".creator--input").prev('.creator--list--item').text();
-        $(".creator--input").prev('.creator--list--item').remove();
-        $(".creator--input").val(this.text);
+          $(".creator--input").val('');
+        }
+        return false;
       }
-    return false;
-    }
+      break;
+    case 8: //backspace pressed
+      //console.log('backspace pressed');
+      if($(".creator--input").is(':focus') && $(".creator--input").val()==''){
+        if($(".creator--input").prev('.creator--list--item')){
+          this.text=$(".creator--input").prev('.creator--list--item').text();
+          $(".creator--input").prev('.creator--list--item').remove();
+          $(".creator--input").val(this.text);
+        }
+        return false;
+      }
+      break;
+    case 38: //up arrow
+      if($(".creator--input").is(':focus')){
+        console.log("up arrow pushed!")
+        return false;
+      }
+      break;
   }
 });
 
