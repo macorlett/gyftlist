@@ -14,6 +14,10 @@ a{
     color: $green;
   }
 }
+.logo--font{
+  font-family: 'Nexa Slab Heavy','Open Sans', sans-serif;
+  @include font-size($type-medium);
+}
 .margin-top-navigation{
   margin-top: 7rem;
 }
