@@ -38,6 +38,16 @@ $(document).keydown(function(e){
     case 38: //up arrow
       if($(".creator--input").is(':focus')){
         console.log("up arrow pushed!");
+        if($(".creator--input").prev('.creator--list--item')){
+          if($(".creator--input").val()!==''){
+            this.newListItem=$(".creator--input").val();
+            createListItem(this.newListItem,'after');
+          }
+          //move the input up and fill with above item text
+          this.text=$(".creator--input").prev('.creator--list--item').text();
+          $(".creator--input").prev('.creator--list--item').remove();
+          $(".creator--input").val(this.text);
+        }
         return false;
       }
       break;
@@ -75,6 +85,14 @@ $(document).on('click','.creator--list--item',function(){
   $(".creator--input").focus().val('').val(this.text);
 });
 
-function createListItem(text,placeholder){
-  $(".creator--input").before('<div class="creator--list--item">'+urlToLink(text)+'</div>');
+function createListItem(text,pos){
+  pos = typeof pos !=='undefined' ? pos:'before';
+  switch(pos){
+    case "before":
+      $(".creator--input").before('<div class="creator--list--item">'+urlToLink(text)+'</div>');
+      break;
+    case "after":
+      $(".creator--input").after('<div class="creator--list--item">'+urlToLink(text)+'</div>');
+      break;
+  }
 }
