@@ -17,6 +17,8 @@ a{
 .logo--font{
   font-family: 'Nexa Slab Heavy','Open Sans', sans-serif;
   @include font-size($type-medium);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 .margin-top-navigation{
   margin-top: 7rem;
