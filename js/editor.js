@@ -54,6 +54,15 @@ $(document).keydown(function(e){
     case 40: //down arrow
       if($(".creator--input").is(':focus')){
         console.log("up down arrow pushed!");
+        if($(".creator--input").next('.creator--list--item')){
+          if($(".creator--input").val()!==''){
+            this.newListItem=$(".creator--input").val();
+            createListItem(this.newListItem,'before');
+          }
+          this.text=$(".creator--input").next('.creator--list--item').text();
+          $(".creator--input").next('.creator--list--item').remove();
+          $(".creator--input").val(this.text);
+        }
         return false;
       }
       break;
