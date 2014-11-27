@@ -77,7 +77,8 @@ $(document).on('focusout','.creator--input',function(){
   }
   if($(this).val()){
     createListItem($(this).val());
-    $(this).val('');
+    $(this).parent().append('<textarea class="creator--input" placeholder="Add another item"></textarea>');
+    $(this).remove();
   }
 });
 
