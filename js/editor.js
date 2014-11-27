@@ -11,7 +11,7 @@ $(document).ready(function(){
 $(document).keydown(function(e){
   if(e.which==13){
     console.log('enter pressed');
-    if($(".creator--input").is(':focus')){
+    if($(".creator--input").is(':focus') && $(".creator--input").val()!==''){
       createListItem($(".creator--input").val());
 
       // add current list to local storage
