@@ -5,11 +5,23 @@ $(document).ready(function(){
     for (obj in this.list){
       createListItem(this.list[obj].item);
     }
+    $(".creator--input").attr('placeholder','Add another item :)');
   }
 });
 
 $(document).keydown(function(e){
   switch(e.which){
+    case 8: //backspace pressed
+      //console.log('backspace pressed');
+      if($(".creator--input").is(':focus') && $(".creator--input").val()==''){
+        if($(".creator--input").prev('.creator--list--item')){
+          this.text=$(".creator--input").prev('.creator--list--item').text();
+          $(".creator--input").prev('.creator--list--item').remove();
+          $(".creator--input").val(this.text);
+        }
+        return false;
+      }
+      break;
     case 13: //enter pressed
       //console.log('enter pressed');
       if($(".creator--input").is(':focus')){
@@ -23,20 +35,15 @@ $(document).keydown(function(e){
         return false;
       }
       break;
-    case 8: //backspace pressed
-      //console.log('backspace pressed');
-      if($(".creator--input").is(':focus') && $(".creator--input").val()==''){
-        if($(".creator--input").prev('.creator--list--item')){
-          this.text=$(".creator--input").prev('.creator--list--item').text();
-          $(".creator--input").prev('.creator--list--item').remove();
-          $(".creator--input").val(this.text);
-        }
+    case 38: //up arrow
+      if($(".creator--input").is(':focus')){
+        console.log("up arrow pushed!");
         return false;
       }
       break;
-    case 38: //up arrow
+    case 40: //down arrow
       if($(".creator--input").is(':focus')){
-        console.log("up arrow pushed!")
+        console.log("up down arrow pushed!");
         return false;
       }
       break;
