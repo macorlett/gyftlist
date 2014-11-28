@@ -2,6 +2,8 @@ console.log('Node server is running');
 
 var http=require('http');
 var qstring=require('querystring');
+var nano=require('nano')('http://localhost:5984'),
+    db=nano.use('gyftlist');
 
 // Process POST requests
 function processPost(req,res,callback){
@@ -31,6 +33,14 @@ function processPost(req,res,callback){
   }
 }
 
+function createDB(name){
+  nano.db.creat('gl-lists',function(err,body){
+    if(err){
+      console.log('['+name+'.create]',err.message);
+      return;
+    }
+  });
+}
 var server=http.createServer(function(req,res){
   if(req.method=='POST'){
     processPost(req,res,function(){

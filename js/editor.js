@@ -2,6 +2,10 @@ $(document).ready(function(){
   if(storeCheck(key)){
     this.data=JSON.parse(localStorage.getItem(key));
     this.list=this.data.list;
+    this.title=this.data.title;
+
+    $(".creator--input").before('<h3 class="creator--list--title">'+this.title+'</h3>');
+
     for (obj in this.list){
       createListItem(this.list[obj].item);
     }
