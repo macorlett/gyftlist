@@ -4,7 +4,9 @@ $(document).ready(function(){
     this.list=this.data.list;
     this.title=this.data.title;
 
-    $(".creator--input").before('<h3 class="creator--list--title">'+this.title+'</h3>');
+    if(this.title){
+      $(".creator--input").before('<h3 class="creator--list--title">'+this.title+'</h3>');
+    }
 
     for (obj in this.list){
       createListItem(this.list[obj].item);
