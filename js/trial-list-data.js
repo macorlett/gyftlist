@@ -6,9 +6,9 @@
 // example of a list object
 var listObject={
     "id":"123",
-    "name":"test list",
+    "title":"test list",
     "author":"@Blob",
-    "updated":1416631389,
+    "updated":1416631390,
     "list":[
       {
       "item":"This is a cool thing i would like."
