@@ -55,7 +55,7 @@ function urlToLink(text){
   return text.replace(exp,'<a href="$1" target="_blank">$1</a>');
 }
 function smartItemText(text){
-  this.mItem=/([0-9]+)+x/i;
+  this.mItem=/([0-9]+x)/i;
   this.url=/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/i;
 
   text=text.replace(this.url,'<a href="$1" target="_blank">$1</a>');
