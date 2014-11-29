@@ -127,9 +127,6 @@ function saveLocal(){
   console.log('saving current list state...');
   this.user='@blob';
   $(".creator--list").each(function(){
-    if($(this).is(".creator--list--title")){
-      //var listTitle=$(this).text();
-      console.log('title: '+$(this).text());
-    }
+    console.log($(this).class()+': '+$(this).val());
   });
 }
