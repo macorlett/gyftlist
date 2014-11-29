@@ -128,7 +128,7 @@ function saveLocal(){
   //generate save object
   this.user='@blob'; //user
   this.id='123'; // list id
-  this.currentTime=time(); //get current unix timestamp
+  this.currentTime=unixTime(); //get current unix timestamp
   
   var newCache={
     "id":this.id,
@@ -137,8 +137,6 @@ function saveLocal(){
     "update":this.currentTime,
     "list":[]
   }
-
-  console.log('title is: '+newCache.title);
 
   $(".creator--list").children().each(function(){
     switch($(this).attr('class')){
@@ -155,6 +153,6 @@ function saveLocal(){
   });
 
   //store data in local cache
-  console.log(JSON.stringify(newCache));
+  //console.log(JSON.stringify(newCache));
   storeLocal(newCache);
 }
