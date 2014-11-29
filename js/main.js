@@ -63,7 +63,7 @@ function postData(data){
 }
 
 function unixTime(){
-  return math.floor(new Date().getTime() / 1000);
+  return Math.floor(new Date().getTime() / 1000);
 }
 
 $(document).ready(function(){
