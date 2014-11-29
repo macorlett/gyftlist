@@ -126,7 +126,7 @@ function createListItem(text,pos){
 function saveLocal(){
   console.log('saving current list state...');
   this.user='@blob';
-  $(".creator--list").each(function(){
+  $(".creator--list").children().each(function(){
     console.log($(this).attr('class')+': '+$(this).val());
   });
 }
