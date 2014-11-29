@@ -68,7 +68,7 @@ function time(){
       return new Date().getTime();
     }
   }
-  return Date.now;
+  return (Date.now / 1000);
 }
 
 $(document).ready(function(){
