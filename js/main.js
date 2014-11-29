@@ -29,6 +29,9 @@ function storeCheck(key){
 
 function storeUpdated(key,time){
   this.data=JSON.parse(localStorage.getItem(key));
+
+  console.log('*** cache time: '+this.data.updated+' | object time: '+time+' ***');
+
   if(this.data.updated>=time){
     return true;
   }else{
