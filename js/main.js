@@ -62,6 +62,15 @@ function postData(data){
   });
 }
 
+function time(){
+  if(!Date.now){
+    Date.now = function(){
+      return new Date().getTime();
+    }
+  }
+  return Date.now;
+}
+
 $(document).ready(function(){
   storeLocal(listObject);
   var key='cachedList@Blob';

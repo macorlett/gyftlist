@@ -73,6 +73,14 @@ $(document).keydown(function(e){
       }
       break;
   }
+
+  //save script
+  if(!lastPress){
+    var lastPress=setTimeout(function(){saveLocal();},2000);
+  }else{
+    clearTimeout(lastPress);
+    var lastPress=setTimeout(function(){saveLocal();},2000);
+  }
 });
 
 $(document).on('focusout','.creator--input',function(){
@@ -111,4 +119,8 @@ function createListItem(text,pos){
       $(".creator--input").after('<div class="creator--list--item">'+urlToLink(text)+'</div>');
       break;
   }
+}
+
+function saveLocal(){
+  console.log('saving current list state...');
 }
