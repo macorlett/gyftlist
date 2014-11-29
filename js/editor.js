@@ -125,6 +125,20 @@ function createListItem(text,pos){
 
 function saveLocal(){
   console.log('saving current list state...');
+  //generate save object
+  this.user='@blob'; //user
+  this.id='123'; // list id
+  this.currentTime=time(); //get current unix timestamp
+  
+  var newCache={
+    "id":this.id,
+    "title":'',
+    "author":this.user,
+    "update":this.currentTime,
+    "list":[]
+  }
+
+  console.log('title is: '+newCache.title);
 
   var itemList=[];
   $(".creator--list").children().each(function(){
@@ -142,18 +156,7 @@ function saveLocal(){
   });
   //console.log(JSON.stringify(itemList));
 
-  //generate save object
-  this.user='@blob'; //user
-  this.id='123'; // list id
-  this.currentTime=time(); //get current unix timestamp
-  this.title=itemList.title; //get title from itemList object
-  var newCache={
-    "id":this.id,
-    "title":this.title,
-    "author":this.user,
-    "update":this.currentTime,
-    "list":[]
-  }
+  
   for(n in itemList){
     if(itemList[n].item){
       //console.log(JSON.stringify(itemList[n]));
