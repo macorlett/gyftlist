@@ -173,7 +173,7 @@ function saveLocal(){
 
 function saveRemote(){
   this.cache=localStorage.getItem(key);
-  if(!window.lastUpdated || (window.lastUpdated<this.cache.updated){
+  if(!window.lastUpdated || (window.lastUpdated<this.cache.updated)){
     postData(this.cache);
     window.lastUpdated=this.cache.updated;
     console.log(window.lastUpdated);
