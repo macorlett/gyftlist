@@ -140,29 +140,20 @@ function saveLocal(){
 
   console.log('title is: '+newCache.title);
 
-  var itemList=[];
   $(".creator--list").children().each(function(){
     switch($(this).attr('class')){
       case 'creator--list--title':
-        itemList.push({"title":$(this).text()});
+        newCache.title=$(this).text();
         break;
       case 'creator--list--item':
-        itemList.push({"item":$(this).text()});
+        newCache.list.push({"item":$(this).text()});
         break;
       case 'creator--input':
-        itemList.push({"item":$(this).val()});
+        newCache.list.push({"item":$(this).val()});
         break;
     }
   });
-  //console.log(JSON.stringify(itemList));
 
-  
-  for(n in itemList){
-    if(itemList[n].item){
-      //console.log(JSON.stringify(itemList[n]));
-      newCache.list.push(itemList[n]);
-    }
-  }
   //store data in local cache
   console.log(JSON.stringify(newCache));
   storeLocal(newCache);
