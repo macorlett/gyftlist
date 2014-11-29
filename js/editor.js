@@ -85,7 +85,7 @@ $(document).keydown(function(e){
 });
 
 $(document).on('focus','.creator--input',function(){
-  $(this).height($(this)[0].scrollHeight-35); //35 is the padding being applied
+  $(this).height($(this).scrollHeight-35); //35 is the padding being applied
 });
 
 $(document).on('focusout','.creator--input',function(){
