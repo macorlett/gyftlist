@@ -126,7 +126,19 @@ function createListItem(text,pos){
 function saveLocal(){
   console.log('saving current list state...');
   this.user='@blob';
+  var itemList={};
   $(".creator--list").children().each(function(){
-    console.log($(this).attr('class')+': '+$(this).val());
+    switch($(this).attr('class')){
+      case 'creator--list--title':
+        itemList.push({"title":$(this).text()});
+        break;
+      case 'creator--list--item':
+        itemList.push({"item":$(this).text()});
+        break;
+      case 'creator--input':
+        itemList.push({"item":$(this).val()});
+        break;
+    }
   });
+  console.log(JSON.stringify(itemList));
 }
