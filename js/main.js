@@ -5,10 +5,13 @@ function storeLocal(data){
     this.key='cachedList'+data.author;
 
     if(storeCheck(this.key)){
+      console.log('*** cache is avalible ***');
       if(!storeUpdated(this.key,data.updated)){
+        console.log('*** cache is not up to date - replacing ***');
         localStorage.setItem(this.key,this.store);
       }
     }else{
+      console.log('*** cache is unavalible - adding ***');
       localStorage.setItem(this.key,this.store);
     }
   }else{
