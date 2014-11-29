@@ -76,6 +76,7 @@ $(document).keydown(function(e){
   //save if no keys have been pressed for 2 seconds
   if(!window.lastPress){
     window.lastPress=setTimeout(function(){saveLocal();},2000);
+    window.pushData=setInterval(saveRemote,60000);
     console.log('first init of lastPress!');
   }else{
     window.clearTimeout(lastPress);
@@ -85,7 +86,7 @@ $(document).keydown(function(e){
 });
 
 $(document).on('focus','.creator--input',function(){
-  $(this).height($(this).scrollHeight-35); //35 is the padding being applied
+  $(this).height($(this)[0].scrollHeight-35); //35 is the padding being applied
 });
 
 $(document).on('focusout','.creator--input',function(){
@@ -139,6 +140,7 @@ function saveLocal(){
   var newCache={
     "id":this.id,
     "title":'',
+    "type":"list",
     "author":this.user,
     "updated":this.currentTime,
     "list":[]
@@ -165,4 +167,14 @@ function saveLocal(){
   storeLocal(newCache);
   console.log("current storage item follows...");
   console.log(localStorage.getItem('cachedList@blob'));
+}
+
+function saveRemote(){
+  this.cache=localStorage.getItem(key);
+  if(!window.lastUpdated || window.lastUpdated<this.cache.updated){
+    postData(this.cache);
+    window.lastUpdated=this.cache.updated;
+  }else{
+    console.log('*** no updates have been made since last push ***');
+  }
 }
