@@ -33,14 +33,7 @@ function processPost(req,res,callback){
   }
 }
 
-function createDB(name){
-  nano.db.creat('gl-lists',function(err,body){
-    if(err){
-      console.log('['+name+'.create]',err.message);
-      return;
-    }
-  });
-}
+
 var server=http.createServer(function(req,res){
   if(req.method=='POST'){
     processPost(req,res,function(){
