@@ -4,9 +4,11 @@
   justify-content:center;
   position: relative;
 }
-.creator--item{
+.creator--list{
   flex: 0 1 960px;
   background: #FFF;
+  padding-left: 2rem;
+  padding-right: 2rem;
   padding-bottom: 3rem;
 }
 .creator--input{
@@ -14,7 +16,7 @@
   border:none;
   background: none;
   resize:none;
-  padding: 1.75rem 2rem;
+  padding: 1.75rem 0;
   margin: 0;
   line-height: 1.8;
   height: 6.8rem;
@@ -22,9 +24,24 @@
   overflow: hidden;
   transition: padding .25s ease-in-out;
 }
+.creator--list--title{
+  width: 100%;
+  margin: 0;
+  padding: 2.5rem 0 0 0;
+  @include font-size($type-medium);
+  font-weight: 700;
+  &:after{
+    content: '';
+    display: block;
+    width: 4rem;
+    height: 0.4rem;
+    margin: 2rem 0 1rem;
+    background: $fl-purple;
+  }
+}
 .creator--list--item{
   width: 100%;
-  padding: 1.75rem 2rem;
+  padding: 1.75rem 0;
   line-height: 1.8;
   display: block;
   cursor: text;
@@ -42,8 +59,8 @@
 }
 
 @media only screen and (min-width: 768px){
-  .creator--list--item,
-  .creator--input{
-    padding: 1.75rem 4rem;
+  .creator--list{
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
 }
