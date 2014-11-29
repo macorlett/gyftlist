@@ -54,6 +54,15 @@ function urlToLink(text){
   var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/i;
   return text.replace(exp,'<a href="$1" target="_blank">$1</a>');
 }
+function smartItemText(text){
+  this.mItem=/([0-9]+)+x/i;
+  this.url=/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/i;
+
+  text.replace(this.url,'<a href="$1" target="_blank">$1</a>');
+  text.replace(this.mItem,'<div class="item--quantity">$1</div>');
+
+  return text;
+}
 
 function postData(data){
   $.ajax({
