@@ -7,7 +7,7 @@
 var listObject={
     "id":"123",
     "title":"test list",
-    "author":"@Blob",
+    "author":"@blob",
     "updated":1416631390,
     "list":[
       {

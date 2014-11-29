@@ -68,7 +68,7 @@ function unixTime(){
 
 $(document).ready(function(){
   storeLocal(listObject);
-  var key='cachedList@Blob';
+  var key='cachedList@blob';
 
   var someData={'test':'data test version 0.1'};
   postData(someData);

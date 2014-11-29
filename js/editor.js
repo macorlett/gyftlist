@@ -158,5 +158,5 @@ function saveLocal(){
   console.log("placing new cache item in storage...");
   storeLocal(newCache);
   console.log("current storage item follows...");
-  console.log(localStorage.getItem('cachedList@Blob'));
+  console.log(localStorage.getItem('cachedList@blob'));
 }
