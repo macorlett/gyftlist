@@ -63,13 +63,7 @@ function postData(data){
 }
 
 function unixTime(){
-  if(!Date.now){
-    Date.now = function(){
-      return new Date().getTime();
-    }
-  }
-  console.log(Date.now / 1000);
-  return (Date.now / 1000);
+  return (new Date().getTime() / 1000);
 }
 
 $(document).ready(function(){
