@@ -85,11 +85,7 @@ $(document).keydown(function(e){
 });
 
 $(document).on('focus','.creator--input',function(){
-  if($(this).scrollHeight>$(this).height()){
-    while($(this).height()<$(this).scrollHeight){
-      $(this).css({'height':($(this).height()+1)+'px'});
-    }
-  }
+  $(this).height($(this)[0].scrollHeight);
 });
 
 $(document).on('focusout','.creator--input',function(){
