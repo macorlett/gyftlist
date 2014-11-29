@@ -115,10 +115,10 @@ function createListItem(text,pos){
   pos = typeof pos !=='undefined' ? pos:'before';
   switch(pos){
     case "before":
-      $(".creator--input").before('<div class="creator--list--item">'+urlToLink(text)+'</div>');
+      $(".creator--input").before('<div class="creator--list--item">'+smartItemText(text)+'</div>');
       break;
     case "after":
-      $(".creator--input").after('<div class="creator--list--item">'+urlToLink(text)+'</div>');
+      $(".creator--input").after('<div class="creator--list--item">'+smartItemText(text)+'</div>');
       break;
   }
 }
