@@ -74,7 +74,7 @@ $(document).keydown(function(e){
       break;
   }
 
-  //save script
+  //save if no keys have been pressed for 2 seconds
   if(!window.lastPress){
     window.lastPress=setTimeout(function(){saveLocal();},2000);
     console.log('first init of lastPress!');
@@ -125,4 +125,11 @@ function createListItem(text,pos){
 
 function saveLocal(){
   console.log('saving current list state...');
+  this.user='@blob';
+  $(".creator--list").each(function(){
+    if($(this).is(".creator--list--title")){
+      //var listTitle=$(this).text();
+      console.log('title: '+$(this).text());
+    }
+  });
 }
