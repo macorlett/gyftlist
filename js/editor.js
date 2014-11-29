@@ -153,6 +153,6 @@ function saveLocal(){
   });
 
   //store data in local cache
-  console.log(JSON.stringify(newCache));
   storeLocal(newCache);
+  console.log(localStorage.getItem('cachedList@Blob'));
 }
