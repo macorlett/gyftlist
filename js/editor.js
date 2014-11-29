@@ -89,6 +89,9 @@ $(document).on('focus','.creator--input',function(){
 });
 
 $(document).on('focusout','.creator--input',function(){
+  if($(this).attr('style')){
+    $(this).removeAttr('style');
+  }
   if($(this).index()>0){
     $(this).attr('placeholder','Add another item :)');
   }else{
