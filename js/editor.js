@@ -155,7 +155,9 @@ function saveLocal(){
         newCache.list.push({"item":$(this).text()});
         break;
       case 'creator--input':
-        newCache.list.push({"item":$(this).val()});
+        if($(this).val()!=''){
+          newCache.list.push({"item":$(this).val()});
+        }
         break;
     }
   });
