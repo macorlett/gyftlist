@@ -6,6 +6,7 @@
 // example of a list object
 var listObject={
     "id":"123",
+    "type":"list",
     "title":"test list",
     "author":"@blob",
     "updated":1416631390,
