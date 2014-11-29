@@ -176,7 +176,7 @@ function saveRemote(){
   if(!window.lastUpdated || (window.lastUpdated<this.cache.updated)){
     postData(this.cache);
     window.lastUpdated=this.cache.updated;
-    console.log(window.lastUpdated);
+    console.log('times ='+this.cache.updated+' : '+window.lastUpdated);
   }else{
     console.log('*** no updates have been made since last push ***');
   }
