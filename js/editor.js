@@ -134,7 +134,7 @@ function saveLocal(){
     "id":this.id,
     "title":'',
     "author":this.user,
-    "update":this.currentTime,
+    "updated":this.currentTime,
     "list":[]
   }
 
