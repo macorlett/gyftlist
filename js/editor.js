@@ -140,7 +140,7 @@ function saveLocal(){
         break;
     }
   });
-  console.log(JSON.stringify(itemList));
+  //console.log(JSON.stringify(itemList));
 
   //generate save object
   this.user='@blob'; //user
@@ -156,8 +156,11 @@ function saveLocal(){
   }
   for(n in itemList){
     if(itemList[n].item){
-      console.log(JSON.stringify(itemList[n]));
+      //console.log(JSON.stringify(itemList[n]));
       newCache.list.push(itemList[n]);
     }
   }
+  //store data in local cache
+  console.log(JSON.stringify(newCache));
+  storeLocal(newCache);
 }
