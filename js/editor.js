@@ -126,7 +126,7 @@ function createListItem(text,pos){
 function saveLocal(){
   console.log('saving current list state...');
   this.user='@blob';
-  var itemList={};
+  var itemList=[];
   $(".creator--list").children().each(function(){
     switch($(this).attr('class')){
       case 'creator--list--title':
