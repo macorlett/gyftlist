@@ -1,5 +1,4 @@
 $(document).ready(function(){
-  var lastPress;
   if(storeCheck(key)){
     this.data=JSON.parse(localStorage.getItem(key));
     this.list=this.data.list;
@@ -76,12 +75,12 @@ $(document).keydown(function(e){
   }
 
   //save script
-  if(!lastPress){
-    lastPress=setTimeout(function(){saveLocal();},2000);
+  if(!window.lastPress){
+    window.lastPress=setTimeout(function(){saveLocal();},2000);
     console.log('first init of lastPress!');
   }else{
-    clearTimeout(lastPress);
-    lastPress=setTimeout(function(){saveLocal();},2000);
+    window.clearTimeout(lastPress);
+    window.lastPress=setTimeout(function(){saveLocal();},2000);
     console.log('reset lastPress!');
   }
 });
