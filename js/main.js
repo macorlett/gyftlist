@@ -58,8 +58,8 @@ function smartItemText(text){
   this.mItem=/([0-9]+)+x/i;
   this.url=/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/i;
 
-  text.replace(this.url,'<a href="$1" target="_blank">$1</a>');
-  text.replace(this.mItem,'<div class="item--quantity">$1</div>');
+  text=text.replace(this.url,'<a href="$1" target="_blank">$1</a>');
+  text=text.replace(this.mItem,'<div class="item--quantity">$1</div>');
 
   return text;
 }
