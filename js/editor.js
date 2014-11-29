@@ -77,9 +77,11 @@ $(document).keydown(function(e){
   //save script
   if(!lastPress){
     var lastPress=setTimeout(function(){saveLocal();},2000);
+    console.log('first init of lastPress!');
   }else{
     clearTimeout(lastPress);
     var lastPress=setTimeout(function(){saveLocal();},2000);
+    console.log('reset lastPress!');
   }
 });
 
