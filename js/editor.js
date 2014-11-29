@@ -14,7 +14,6 @@ $(document).ready(function(){
     $(".creator--input").attr('placeholder','Add another item :)');
   }
 });
-
 $(document).keydown(function(e){
   switch(e.which){
     case 8: //backspace pressed
@@ -82,6 +81,14 @@ $(document).keydown(function(e){
     window.clearTimeout(lastPress);
     window.lastPress=setTimeout(function(){saveLocal();},2000);
     console.log('reset lastPress!');
+  }
+});
+
+$(document).on('focus','.creator--input',function(){
+  if($(this).scrollHeight>$(this).height()){
+    while($(this).height()<$(this).scrollHeight){
+      $(this).css({'height':($(this).height()+1)+'px'});
+    }
   }
 });
 
